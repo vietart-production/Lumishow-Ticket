@@ -121,6 +121,7 @@ public class CameraScanner : MonoBehaviour
 
     private bool isWarmedUp = false;
     private int warmUpFrameCount = 0;
+    private bool isPermissionFlowRunning;
     private string currentQRValue;
     private ScanState currentState;
     private int missFrameCount;
@@ -248,6 +249,10 @@ public class CameraScanner : MonoBehaviour
     /// </summary>
     private IEnumerator RequestCameraPermissionThenStart()
     {
+        if (isPermissionFlowRunning)
+            yield break;
+
+        isPermissionFlowRunning = true;
         SetCameraStatus("Đang khởi động camera...");
 
         if (!Application.HasUserAuthorization(UserAuthorization.WebCam))
@@ -258,11 +263,21 @@ public class CameraScanner : MonoBehaviour
         if (!Application.HasUserAuthorization(UserAuthorization.WebCam))
         {
             Debug.LogError("CameraScanner: Người dùng chưa cấp quyền Camera.");
-            SetCameraStatus("Không có quyền truy cập Camera.\nVui lòng cấp quyền Camera cho app trong Cài đặt máy rồi mở lại.");
+            SetCameraStatus("Không có quyền truy cập Camera.\nVui lòng cấp quyền trong Cài đặt máy rồi quay lại app.");
+            isPermissionFlowRunning = false;
             yield break;
         }
 
         StartCamera();
+        isPermissionFlowRunning = false;
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus || testModeUseMainCamera || cameraTexture != null)
+            return;
+
+        StartCoroutine(RequestCameraPermissionThenStart());
     }
 
     private void SetupAspectFitter()
