@@ -31,8 +31,8 @@ public class CameraScanner : MonoBehaviour
     [SerializeField] private bool rawImageUsesStretchedAnchors = true;
 
     [Header("Camera Settings")]
-    [SerializeField] private int requestedWidth = 1280;
-    [SerializeField] private int requestedHeight = 720;
+    [SerializeField] private int requestedWidth = 1920;
+    [SerializeField] private int requestedHeight = 1080;
     [SerializeField] private int requestedFPS = 30;
     [Tooltip("Ưu tiên camera sau (rear) nếu máy có nhiều camera")]
     [SerializeField] private bool preferRearCamera = true;
@@ -118,15 +118,6 @@ public class CameraScanner : MonoBehaviour
     /// </summary>
     private int FrameWidth => testModeUseMainCamera ? (testFrameWidth > 0 ? testFrameWidth : Screen.width) : cameraTexture.width;
     private int FrameHeight => testModeUseMainCamera ? (testFrameHeight > 0 ? testFrameHeight : Screen.height) : cameraTexture.height;
-
-    /// <summary>
-    /// Góc xoay (độ) mà ApplyCameraOrientation() đang áp cho rawImage để hiển thị đúng hướng
-    /// camera thật (0 ở Test Mode, vì camera test render thẳng ra màn hình không cần xoay bù) -
-    /// QRBoxUI cần biết giá trị này để bù hướng offset của status label (xem QRBoxUI.SetCorners),
-    /// vì label là con của rawImage nên cũng bị xoay theo, và 1 offset cố định (vd "lên trên")
-    /// tính TRƯỚC khi xoay sẽ render sai hướng bất cứ khi nào góc xoay khác 0.
-    /// </summary>
-    private float CurrentDisplayRotationDegrees => testModeUseMainCamera ? 0f : cameraTexture.videoRotationAngle;
 
     private bool isWarmedUp = false;
     private int warmUpFrameCount = 0;
@@ -305,7 +296,20 @@ public class CameraScanner : MonoBehaviour
             return;
         }
 
-        int deviceIndex = ChooseBestDeviceIndex(devices);
+        int deviceIndex = 0;
+
+        if (preferRearCamera)
+        {
+            for (int i = 0; i < devices.Length; i++)
+            {
+                if (!devices[i].isFrontFacing)
+                {
+                    deviceIndex = i;
+                    break;
+                }
+            }
+        }
+
         string cameraName = devices[deviceIndex].name;
 
         cameraTexture = new WebCamTexture(
@@ -330,59 +334,7 @@ public class CameraScanner : MonoBehaviour
         isWarmedUp = false;
         warmUpFrameCount = 0;
 
-        Debug.Log("Camera started: " + cameraName + " (index " + deviceIndex + "/" + devices.Length + ")");
-    }
-
-    /// <summary>
-    /// Chọn camera SAU (rear) có độ phân giải khả dụng CAO NHẤT, thay vì chỉ lấy camera sau ĐẦU
-    /// TIÊN tìm thấy như trước. Nhiều điện thoại hiện có 3-4 camera sau (chính/góc siêu rộng/
-    /// macro/đo chiều sâu) và WebCamTexture.devices KHÔNG đảm bảo liệt kê camera CHÍNH trước -
-    /// lấy nhầm 1 lens phụ (thường độ phân giải rất thấp, đôi khi tỉ lệ khung hình khác thường)
-    /// sẽ khiến ảnh preview vừa mờ/vỡ hạt vừa méo tỉ lệ, đúng như đã gặp khi test trên máy thật.
-    /// availableResolutions (nếu nền tảng trả về - có thể null tuỳ nền tảng) cho biết độ phân
-    /// giải tối đa thật của từng lens mà không cần mở thử từng cái. Nếu preferRearCamera = false
-    /// giữ nguyên hành vi cũ (luôn lấy device đầu tiên).
-    /// </summary>
-    private int ChooseBestDeviceIndex(WebCamDevice[] devices)
-    {
-        if (!preferRearCamera)
-            return 0;
-
-        int bestIndex = -1;
-        long bestPixelCount = -1;
-
-        for (int i = 0; i < devices.Length; i++)
-        {
-            if (devices[i].isFrontFacing)
-                continue;
-
-            long pixelCount = MaxAvailablePixelCount(devices[i]);
-
-            if (bestIndex == -1 || pixelCount > bestPixelCount)
-            {
-                bestIndex = i;
-                bestPixelCount = pixelCount;
-            }
-        }
-
-        // Không tìm thấy camera sau nào (thiết bị lạ/chỉ có camera trước) -> fallback về device 0,
-        // giống hành vi mặc định cũ.
-        return bestIndex >= 0 ? bestIndex : 0;
-    }
-
-    private long MaxAvailablePixelCount(WebCamDevice device)
-    {
-        Resolution[] resolutions = device.availableResolutions;
-        if (resolutions == null)
-            return 0;
-
-        long max = 0;
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            long count = (long)resolutions[i].width * resolutions[i].height;
-            if (count > max) max = count;
-        }
-        return max;
+        Debug.Log("Camera started: " + cameraName);
     }
 
     private void Update()
@@ -431,13 +383,6 @@ public class CameraScanner : MonoBehaviour
             }
 
             SetCameraStatus(null);
-
-            // Log 1 lần lúc camera vừa "ấm" xong - để chẩn đoán các lỗi hiển thị (méo tỉ lệ,
-            // độ phân giải thấp...) tuỳ thiết bị mà không cần đoán mò: đối chiếu số thật ở đây
-            // (qua adb logcat/Player.log) với độ phân giải yêu cầu (requestedWidth/Height).
-            Debug.Log("CameraScanner: Camera sẵn sàng - " + cameraTexture.width + "x" + cameraTexture.height +
-                       ", videoRotationAngle=" + cameraTexture.videoRotationAngle +
-                       ", verticallyMirrored=" + cameraTexture.videoVerticallyMirrored);
         }
 
         ProcessPendingDecodeResult();
@@ -703,7 +648,7 @@ public class CameraScanner : MonoBehaviour
         qrBox.SetVisible(true);
         qrBox.SetColor(colorDetecting);
         qrBox.SetLabel("Đang dò tìm QR...");
-        qrBox.SetCorners(topLeft, topRight, bottomRight, bottomLeft, CurrentDisplayRotationDegrees);
+        qrBox.SetCorners(topLeft, topRight, bottomRight, bottomLeft);
     }
 
     /// <summary>
@@ -764,8 +709,7 @@ public class CameraScanner : MonoBehaviour
             RawPixelToLocal(topLeftOuter),
             RawPixelToLocal(topRightOuter),
             RawPixelToLocal(bottomRightOuter),
-            RawPixelToLocal(bottomLeftOuter),
-            CurrentDisplayRotationDegrees);
+            RawPixelToLocal(bottomLeftOuter));
     }
 
     /// <summary>

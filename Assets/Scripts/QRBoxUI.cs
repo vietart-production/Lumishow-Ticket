@@ -106,7 +106,7 @@ public class QRBoxUI : MonoBehaviour
         rt.SetParent(transform, false);
         rt.anchorMin = new Vector2(0.5f, 0.5f);
         rt.anchorMax = new Vector2(0.5f, 0.5f);
-        rt.pivot = new Vector2(0.5f, 0f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
         rt.sizeDelta = new Vector2(260f, 44f);
 
         statusText = go.AddComponent<Text>();
@@ -159,12 +159,9 @@ public class QRBoxUI : MonoBehaviour
     /// (rotationCorrectionDegrees) quanh tâm khung, suy ra tâm + kích thước + góc xoay của CẢ khối
     /// khung QR thật, rồi áp nguyên khối vào cornerBoxRoot (dịch chuyển/xoay/scale) - 4 góc bên
     /// trong prefab tự động đi theo đúng vị trí tương đối đã thiết kế sẵn, không cần tính riêng
-    /// từng góc ở đây. displayRotationDegrees = góc mà CameraScanner đang xoay rawImage (cha của
-    /// QRBox) để hiển thị đúng hướng camera thật (CameraScanner.CurrentDisplayRotationDegrees) -
-    /// chỉ dùng để bù hướng offset của status label, xem cuối hàm.
+    /// từng góc ở đây.
     /// </summary>
-    public void SetCorners(Vector2 topLeft, Vector2 topRight, Vector2 bottomRight, Vector2 bottomLeft,
-        float displayRotationDegrees)
+    public void SetCorners(Vector2 topLeft, Vector2 topRight, Vector2 bottomRight, Vector2 bottomLeft)
     {
         Vector2 centroid = (topLeft + topRight + bottomRight + bottomLeft) * 0.25f;
 
@@ -188,36 +185,19 @@ public class QRBoxUI : MonoBehaviour
         }
 
         Vector2 topCenter = (topLeft + topRight) * 0.5f;
-        float topEdgeLength = Vector2.Distance(topLeft, topRight);
+        Vector2 topEdge = topRight - topLeft;
+        Vector2 outwardNormal = new Vector2(-topEdge.y, topEdge.x).normalized;
+        Vector2 bottomCenter = (bottomLeft + bottomRight) * 0.5f;
+        if (Vector2.Dot(outwardNormal, bottomCenter - topCenter) > 0f)
+        {
+            outwardNormal = -outwardNormal;
+        }
 
-        // QUAN TRỌNG: label là con của QRBox, vốn là con của rawImage - và rawImage đang bị xoay
-        // displayRotationDegrees độ (CameraScanner.ApplyCameraOrientation) để hiển thị đúng hướng
-        // camera thật. Một offset CỐ ĐỊNH kiểu "(0, +16) = lên trên" chỉ đúng khi
-        // displayRotationDegrees = 0 - với điện thoại cầm dọc (thường 90 hoặc 270 độ), trục "lên"
-        // trong không gian cục bộ (chưa xoay) lại render ra thành cạnh TRÁI/PHẢI trên màn hình
-        // thật (đã gặp: label hiện lệch sang phải khung thay vì phía trên). Xoay ngược offset
-        // theo ĐÚNG góc đó (CCW theo displayRotationDegrees - cùng công thức/chiều với
-        // TransformCorner() bên dưới) để "lên trên" luôn là lên trên MÀN HÌNH, không phải lên
-        // trên trong hệ toạ độ cục bộ chưa xoay.
-        Vector2 upOffset = RotateOffset(new Vector2(0f, 16f), displayRotationDegrees);
+        float topEdgeLength = topEdge.magnitude;
 
         RectTransform labelRT = statusText.rectTransform;
-        labelRT.anchoredPosition = topCenter + upOffset;
+        labelRT.anchoredPosition = topCenter + outwardNormal * (labelRT.rect.height * 0.5f + 16f);
         labelRT.sizeDelta = new Vector2(Mathf.Max(160f, topEdgeLength), 44f);
-    }
-
-    private static Vector2 RotateOffset(Vector2 offset, float degrees)
-    {
-        if (degrees == 0f)
-            return offset;
-
-        float rad = degrees * Mathf.Deg2Rad;
-        float cos = Mathf.Cos(rad);
-        float sin = Mathf.Sin(rad);
-        return new Vector2(
-            offset.x * cos - offset.y * sin,
-            offset.x * sin + offset.y * cos
-        );
     }
 
     /// <summary>
@@ -225,7 +205,19 @@ public class QRBoxUI : MonoBehaviour
     /// </summary>
     private Vector2 TransformCorner(Vector2 corner, Vector2 centroid)
     {
-        Vector2 offset = RotateOffset((corner - centroid) * boxScale, rotationCorrectionDegrees);
+        Vector2 offset = (corner - centroid) * boxScale;
+
+        if (rotationCorrectionDegrees != 0f)
+        {
+            float rad = rotationCorrectionDegrees * Mathf.Deg2Rad;
+            float cos = Mathf.Cos(rad);
+            float sin = Mathf.Sin(rad);
+            offset = new Vector2(
+                offset.x * cos - offset.y * sin,
+                offset.x * sin + offset.y * cos
+            );
+        }
+
         return centroid + offset;
     }
 }
