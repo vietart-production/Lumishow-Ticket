@@ -185,15 +185,15 @@ public class QRBoxUI : MonoBehaviour
         }
 
         Vector2 topCenter = (topLeft + topRight) * 0.5f;
-        Vector2 topEdge = topRight - topLeft;
-        Vector2 outwardNormal = new Vector2(-topEdge.y, topEdge.x).normalized;
+        Vector2 labelTopEdge = topRight - topLeft;
+        Vector2 outwardNormal = new Vector2(-labelTopEdge.y, labelTopEdge.x).normalized;
         Vector2 bottomCenter = (bottomLeft + bottomRight) * 0.5f;
         if (Vector2.Dot(outwardNormal, bottomCenter - topCenter) > 0f)
         {
             outwardNormal = -outwardNormal;
         }
 
-        float topEdgeLength = topEdge.magnitude;
+        float topEdgeLength = labelTopEdge.magnitude;
 
         RectTransform labelRT = statusText.rectTransform;
         labelRT.anchoredPosition = topCenter + outwardNormal * (labelRT.rect.height * 0.5f + 16f);
