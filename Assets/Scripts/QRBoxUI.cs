@@ -198,6 +198,9 @@ public class QRBoxUI : MonoBehaviour
         RectTransform labelRT = statusText.rectTransform;
         labelRT.anchoredPosition = topCenter + outwardNormal * (labelRT.rect.height * 0.5f + 16f);
         labelRT.sizeDelta = new Vector2(Mathf.Max(160f, topEdgeLength), 44f);
+
+        Transform canvasTransform = transform.parent != null ? transform.parent.parent : null;
+        labelRT.rotation = canvasTransform != null ? canvasTransform.rotation : Quaternion.identity;
     }
 
     /// <summary>
