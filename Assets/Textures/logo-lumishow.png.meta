@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 5f85375e0bd751c408f20fc30c744d5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 662498752665732163
+    second: logo-lumishow_0
+  - first:
+      213: -6554599054778175891
+    second: logo-lumishow_1
+  - first:
+      213: -54010462854123261
+    second: logo-lumishow_2
+  - first:
+      213: 824264600857811470
+    second: logo-lumishow_3
+  - first:
+      213: 1721168513194428271
+    second: logo-lumishow_4
+  - first:
+      213: -5856412965492948703
+    second: logo-lumishow_5
+  - first:
+      213: 7968481967562376782
+    second: logo-lumishow_6
+  - first:
+      213: -7962138564464107732
+    second: logo-lumishow_7
+  - first:
+      213: 6054814426879040078
+    second: logo-lumishow_8
+  - first:
+      213: 8491356615251818371
+    second: logo-lumishow_9
+  - first:
+      213: 2089199870688985539
+    second: logo-lumishow_10
+  - first:
+      213: -6950417104329336436
+    second: logo-lumishow_11
+  - first:
+      213: 5304806503487236688
+    second: logo-lumishow_12
+  - first:
+      213: 560277445485357855
+    second: logo-lumishow_13
+  - first:
+      213: -3433219623291379996
+    second: logo-lumishow_14
+  - first:
+      213: 1078432652351088601
+    second: logo-lumishow_15
+  - first:
+      213: 4202365746238167562
+    second: logo-lumishow_16
+  - first:
+      213: 1075921096739106607
+    second: logo-lumishow_17
+  - first:
+      213: -8675092465109896729
+    second: logo-lumishow_18
+  - first:
+      213: 1290190365861233699
+    second: logo-lumishow_19
+  - first:
+      213: -1660103140989930870
+    second: logo-lumishow_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: logo-lumishow_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 296
+        width: 119
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344c7c00b1ba13900800000000000000
+      internalID: 662498752665732163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 249
+        width: 615
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ee5de23e26905a0800000000000000
+      internalID: -6554599054778175891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_2
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 392
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301fc6b25cd104ff0800000000000000
+      internalID: -54010462854123261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_3
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 322
+        width: 147
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a1f0f8940607b00800000000000000
+      internalID: 824264600857811470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_4
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 388
+        width: 41
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f678a83c4a1d2e710800000000000000
+      internalID: 1721168513194428271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_5
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 320
+        width: 133
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1210dcdbf67d9bea0800000000000000
+      internalID: -5856412965492948703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_6
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 388
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4649a3712cb59e60800000000000000
+      internalID: 7968481967562376782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_7
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 166
+        width: 149
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f9dac292dc08190800000000000000
+      internalID: -7962138564464107732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_8
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 320
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a190734a5070450800000000000000
+      internalID: 6054814426879040078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_9
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 342
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3877f393adb57d570800000000000000
+      internalID: 8491356615251818371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 1315
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1853d96345efc10800000000000000
+      internalID: 2089199870688985539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_11
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 304
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8996afe7782b8f90800000000000000
+      internalID: -6950417104329336436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 232
+        width: 75
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ae98aa8657e9940800000000000000
+      internalID: 5304806503487236688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_13
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 270
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b61d14e5186c700800000000000000
+      internalID: 560277445485357855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 67
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee11dd41f0ca50d0800000000000000
+      internalID: -3433219623291379996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_15
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 230
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7a19598cc57fe00800000000000000
+      internalID: 1078432652351088601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_16
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 136
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a9bc0916dc15a30800000000000000
+      internalID: 4202365746238167562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_17
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 86
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fab7979807eee00800000000000000
+      internalID: 1075921096739106607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_18
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 44
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1f4779d51eb9780800000000000000
+      internalID: -8675092465109896729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_19
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 66
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3244ac15d4da7e110800000000000000
+      internalID: 1290190365861233699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo-lumishow_20
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 0
+        width: 67
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82f8c62df026f8e0800000000000000
+      internalID: -1660103140989930870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      logo-lumishow_0: 662498752665732163
+      logo-lumishow_1: -6554599054778175891
+      logo-lumishow_10: 2089199870688985539
+      logo-lumishow_11: -6950417104329336436
+      logo-lumishow_12: 5304806503487236688
+      logo-lumishow_13: 560277445485357855
+      logo-lumishow_14: -3433219623291379996
+      logo-lumishow_15: 1078432652351088601
+      logo-lumishow_16: 4202365746238167562
+      logo-lumishow_17: 1075921096739106607
+      logo-lumishow_18: -8675092465109896729
+      logo-lumishow_19: 1290190365861233699
+      logo-lumishow_2: -54010462854123261
+      logo-lumishow_20: -1660103140989930870
+      logo-lumishow_3: 824264600857811470
+      logo-lumishow_4: 1721168513194428271
+      logo-lumishow_5: -5856412965492948703
+      logo-lumishow_6: 7968481967562376782
+      logo-lumishow_7: -7962138564464107732
+      logo-lumishow_8: 6054814426879040078
+      logo-lumishow_9: 8491356615251818371
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

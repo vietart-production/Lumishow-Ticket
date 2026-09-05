@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925401650458",
+    "project_id": "sonthanthuyquai-ticket",
+    "storage_bucket": "sonthanthuyquai-ticket.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925401650458:android:8a57cd1b42d31aa4a308a3",
+        "android_client_info": {
+          "package_name": "com.LumiShow.SonThanThuyQuai_TicketManager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUyJ1UfBRHVJDl4-VtKpzA37VnjaKBjbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,56 @@
+# Unity generated folders
+.utmp/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# IDE and editor generated files
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity generated metadata and solution files
+ExportedObj/
+consulo/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Build outputs and crash reports
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.appx
+*.appxbundle
+*.unitypackage
+sysinfo.txt
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Visual Studio Code local settings
+.history/
+
+# Asset server cache
+[Aa]ssets/[Aa]sset[Ss]tore [Tt]ools/
